@@ -10,7 +10,11 @@
             <TextRuns>
               <TextRun>
                 <Value>=First(Fields!date.Value, "DataSet1")</Value>
-                <Style />
+                <Style>
+                  <FontFamily>Arial Narrow</FontFamily>
+                  <FontSize>10.5pt</FontSize>
+                  <FontWeight>SemiBold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style>
@@ -41,7 +45,11 @@
             <TextRuns>
               <TextRun>
                 <Value>=First(Fields!amount.Value, "DataSet1")</Value>
-                <Style />
+                <Style>
+                  <FontFamily>Arial Narrow</FontFamily>
+                  <FontSize>10.5pt</FontSize>
+                  <FontWeight>SemiBold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style>
@@ -73,7 +81,11 @@
             <TextRuns>
               <TextRun>
                 <Value>=First(Fields!fullname.Value, "DataSet1")</Value>
-                <Style />
+                <Style>
+                  <FontFamily>Arial Narrow</FontFamily>
+                  <FontSize>10.5pt</FontSize>
+                  <FontWeight>SemiBold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -103,7 +115,11 @@
             <TextRuns>
               <TextRun>
                 <Value>=First(Fields!wordamount.Value, "DataSet1")</Value>
-                <Style />
+                <Style>
+                  <FontFamily>Arial Narrow</FontFamily>
+                  <FontSize>10.5pt</FontSize>
+                  <FontWeight>SemiBold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />

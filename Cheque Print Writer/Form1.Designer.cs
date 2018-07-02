@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.DataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSet1 = new Cheque_Print_Writer.DataSet1();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -38,6 +38,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.payeeCharactersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lowerCaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.capitalizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.camilleCaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wordAmountCharactersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lowerCaseToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.capitalizeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.camilleCaseToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.customizeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -52,18 +64,6 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.payeeCharactersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.wordAmountCharactersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lowerCaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.capitalizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.camilleCaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lowerCaseToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.capitalizeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.camilleCaseToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.customizeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -83,9 +83,9 @@
             // 
             this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.DataTable1BindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "DataSet1";
+            reportDataSource2.Value = this.DataTable1BindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Cheque_Print_Writer.cheque.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 27);
             this.reportViewer1.Name = "reportViewer1";
@@ -142,6 +142,103 @@
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.payeeCharactersToolStripMenuItem,
+            this.wordAmountCharactersToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // payeeCharactersToolStripMenuItem
+            // 
+            this.payeeCharactersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lowerCaseToolStripMenuItem,
+            this.capitalizeToolStripMenuItem,
+            this.camilleCaseToolStripMenuItem,
+            this.customizeToolStripMenuItem});
+            this.payeeCharactersToolStripMenuItem.Name = "payeeCharactersToolStripMenuItem";
+            this.payeeCharactersToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.payeeCharactersToolStripMenuItem.Text = "Payee Characters";
+            // 
+            // lowerCaseToolStripMenuItem
+            // 
+            this.lowerCaseToolStripMenuItem.CheckOnClick = true;
+            this.lowerCaseToolStripMenuItem.Name = "lowerCaseToolStripMenuItem";
+            this.lowerCaseToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.lowerCaseToolStripMenuItem.Text = "Lower Case";
+            // 
+            // capitalizeToolStripMenuItem
+            // 
+            this.capitalizeToolStripMenuItem.CheckOnClick = true;
+            this.capitalizeToolStripMenuItem.Name = "capitalizeToolStripMenuItem";
+            this.capitalizeToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.capitalizeToolStripMenuItem.Text = "Capitalize";
+            // 
+            // camilleCaseToolStripMenuItem
+            // 
+            this.camilleCaseToolStripMenuItem.Checked = true;
+            this.camilleCaseToolStripMenuItem.CheckOnClick = true;
+            this.camilleCaseToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.camilleCaseToolStripMenuItem.Name = "camilleCaseToolStripMenuItem";
+            this.camilleCaseToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.camilleCaseToolStripMenuItem.Text = "Camille Case";
+            // 
+            // customizeToolStripMenuItem
+            // 
+            this.customizeToolStripMenuItem.CheckOnClick = true;
+            this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
+            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.customizeToolStripMenuItem.Text = "Customize";
+            // 
+            // wordAmountCharactersToolStripMenuItem
+            // 
+            this.wordAmountCharactersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lowerCaseToolStripMenuItem1,
+            this.capitalizeToolStripMenuItem1,
+            this.camilleCaseToolStripMenuItem1,
+            this.customizeToolStripMenuItem1});
+            this.wordAmountCharactersToolStripMenuItem.Name = "wordAmountCharactersToolStripMenuItem";
+            this.wordAmountCharactersToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.wordAmountCharactersToolStripMenuItem.Text = "Word Amount Characters";
+            // 
+            // lowerCaseToolStripMenuItem1
+            // 
+            this.lowerCaseToolStripMenuItem1.CheckOnClick = true;
+            this.lowerCaseToolStripMenuItem1.Name = "lowerCaseToolStripMenuItem1";
+            this.lowerCaseToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
+            this.lowerCaseToolStripMenuItem1.Text = "Lower Case";
+            // 
+            // capitalizeToolStripMenuItem1
+            // 
+            this.capitalizeToolStripMenuItem1.CheckOnClick = true;
+            this.capitalizeToolStripMenuItem1.Name = "capitalizeToolStripMenuItem1";
+            this.capitalizeToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
+            this.capitalizeToolStripMenuItem1.Text = "Capitalize";
+            // 
+            // camilleCaseToolStripMenuItem1
+            // 
+            this.camilleCaseToolStripMenuItem1.Checked = true;
+            this.camilleCaseToolStripMenuItem1.CheckOnClick = true;
+            this.camilleCaseToolStripMenuItem1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.camilleCaseToolStripMenuItem1.Name = "camilleCaseToolStripMenuItem1";
+            this.camilleCaseToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
+            this.camilleCaseToolStripMenuItem1.Text = "Camille Case";
+            // 
+            // customizeToolStripMenuItem1
+            // 
+            this.customizeToolStripMenuItem1.CheckOnClick = true;
+            this.customizeToolStripMenuItem1.Name = "customizeToolStripMenuItem1";
+            this.customizeToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
+            this.customizeToolStripMenuItem1.Text = "Customize";
+            // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -188,6 +285,7 @@
             // 
             // textBox5
             // 
+            this.textBox5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Cheque_Print_Writer.Properties.Settings.Default, "D_WordAmount", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textBox5.Location = new System.Drawing.Point(165, 385);
             this.textBox5.Name = "textBox5";
@@ -303,103 +401,6 @@
             this.button2.Text = "Load";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // settingsToolStripMenuItem
-            // 
-            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.payeeCharactersToolStripMenuItem,
-            this.wordAmountCharactersToolStripMenuItem});
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            // 
-            // payeeCharactersToolStripMenuItem
-            // 
-            this.payeeCharactersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lowerCaseToolStripMenuItem,
-            this.capitalizeToolStripMenuItem,
-            this.camilleCaseToolStripMenuItem,
-            this.customizeToolStripMenuItem});
-            this.payeeCharactersToolStripMenuItem.Name = "payeeCharactersToolStripMenuItem";
-            this.payeeCharactersToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.payeeCharactersToolStripMenuItem.Text = "Payee Characters";
-            // 
-            // wordAmountCharactersToolStripMenuItem
-            // 
-            this.wordAmountCharactersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lowerCaseToolStripMenuItem1,
-            this.capitalizeToolStripMenuItem1,
-            this.camilleCaseToolStripMenuItem1,
-            this.customizeToolStripMenuItem1});
-            this.wordAmountCharactersToolStripMenuItem.Name = "wordAmountCharactersToolStripMenuItem";
-            this.wordAmountCharactersToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.wordAmountCharactersToolStripMenuItem.Text = "Word Amount Characters";
-            // 
-            // lowerCaseToolStripMenuItem
-            // 
-            this.lowerCaseToolStripMenuItem.CheckOnClick = true;
-            this.lowerCaseToolStripMenuItem.Name = "lowerCaseToolStripMenuItem";
-            this.lowerCaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.lowerCaseToolStripMenuItem.Text = "Lower Case";
-            // 
-            // capitalizeToolStripMenuItem
-            // 
-            this.capitalizeToolStripMenuItem.CheckOnClick = true;
-            this.capitalizeToolStripMenuItem.Name = "capitalizeToolStripMenuItem";
-            this.capitalizeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.capitalizeToolStripMenuItem.Text = "Capitalize";
-            // 
-            // camilleCaseToolStripMenuItem
-            // 
-            this.camilleCaseToolStripMenuItem.Checked = true;
-            this.camilleCaseToolStripMenuItem.CheckOnClick = true;
-            this.camilleCaseToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.camilleCaseToolStripMenuItem.Name = "camilleCaseToolStripMenuItem";
-            this.camilleCaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.camilleCaseToolStripMenuItem.Text = "Camille Case";
-            // 
-            // customizeToolStripMenuItem
-            // 
-            this.customizeToolStripMenuItem.CheckOnClick = true;
-            this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.customizeToolStripMenuItem.Text = "Customize";
-            // 
-            // lowerCaseToolStripMenuItem1
-            // 
-            this.lowerCaseToolStripMenuItem1.CheckOnClick = true;
-            this.lowerCaseToolStripMenuItem1.Name = "lowerCaseToolStripMenuItem1";
-            this.lowerCaseToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.lowerCaseToolStripMenuItem1.Text = "Lower Case";
-            // 
-            // capitalizeToolStripMenuItem1
-            // 
-            this.capitalizeToolStripMenuItem1.CheckOnClick = true;
-            this.capitalizeToolStripMenuItem1.Name = "capitalizeToolStripMenuItem1";
-            this.capitalizeToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.capitalizeToolStripMenuItem1.Text = "Capitalize";
-            // 
-            // camilleCaseToolStripMenuItem1
-            // 
-            this.camilleCaseToolStripMenuItem1.Checked = true;
-            this.camilleCaseToolStripMenuItem1.CheckOnClick = true;
-            this.camilleCaseToolStripMenuItem1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.camilleCaseToolStripMenuItem1.Name = "camilleCaseToolStripMenuItem1";
-            this.camilleCaseToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.camilleCaseToolStripMenuItem1.Text = "Camille Case";
-            // 
-            // customizeToolStripMenuItem1
-            // 
-            this.customizeToolStripMenuItem1.CheckOnClick = true;
-            this.customizeToolStripMenuItem1.Name = "customizeToolStripMenuItem1";
-            this.customizeToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.customizeToolStripMenuItem1.Text = "Customize";
-            // 
-            // reportsToolStripMenuItem
-            // 
-            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.reportsToolStripMenuItem.Text = "Reports";
             // 
             // Form1
             // 

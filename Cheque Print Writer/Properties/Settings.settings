@@ -9,7 +9,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="D_DateFormat" Type="System.String" Scope="User">
-      <Value Profile="(Default)">MMM dd, yyyy</Value>
+      <Value Profile="(Default)">MMMM dd, yyyy</Value>
     </Setting>
     <Setting Name="D_DateCheckCap" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

@@ -49,7 +49,7 @@ namespace Cheque_Print_Writer.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("MMM dd, yyyy")]
+        [global::System.Configuration.DefaultSettingValueAttribute("MMMM dd, yyyy")]
         public string D_DateFormat {
             get {
                 return ((string)(this["D_DateFormat"]));
