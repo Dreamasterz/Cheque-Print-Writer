@@ -72,6 +72,8 @@ C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print 
 C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\bin\Debug\SqlServerTypes\x86\msvcr120.dll
 C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
 C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\bin\Debug\Cheque Print Writer.exe.config
+C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\bin\Debug\Cheque Print Writer.exe.manifest
+C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\bin\Debug\Cheque Print Writer.application
 C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\bin\Debug\Cheque Print Writer.exe
 C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\bin\Debug\Cheque Print Writer.pdb
 C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\bin\Debug\Microsoft.ReportViewer.Common.dll
@@ -133,6 +135,8 @@ C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print 
 C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\obj\Debug\Cheque_Print_Writer.Properties.Resources.resources
 C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\obj\Debug\Cheque Print Writer.csproj.GenerateResource.cache
 C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\obj\Debug\Cheque Print Writer.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\obj\Debug\Cheque Print Writer.exe.manifest
+C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\obj\Debug\Cheque Print Writer.application
 C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\obj\Debug\Cheque Print Writer.csproj.CopyComplete
 C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\obj\Debug\Cheque Print Writer.exe
 C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\obj\Debug\Cheque Print Writer.pdb

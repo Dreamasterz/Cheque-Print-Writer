@@ -59,15 +59,5 @@ namespace Cheque_Print_Writer.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _5_homepage___footer {
-            get {
-                object obj = ResourceManager.GetObject("5 homepage - footer", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
