@@ -137,3 +137,11 @@ C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print 
 C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\obj\Release\Cheque Print Writer.csproj.CopyComplete
 C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\obj\Release\Cheque Print Writer.exe
 C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\obj\Release\Cheque Print Writer.pdb
+C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\bin\Release\DBControl.dll
+C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\bin\Release\MySql.Data.dll
+C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\bin\Release\DBControl.pdb
+C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\bin\Release\DBControl.dll.config
+C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\obj\Release\Cheque_Print_Writer.DBSetup.resources
+C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\bin\Release\StateClass.dll
+C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\bin\Release\StateClass.pdb
+C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\bin\Release\StateClass.dll.config

@@ -16,13 +16,35 @@ namespace Cheque_Print_Writer
         public Form1()
         {
             InitializeComponent();
+
         }
+        private bool isReady = false;
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
             //this.reportViewer1.RefreshReport();
+            //Property Loaded
+            Properties.Settings.Default.Reload();
+
             textBox3.Text = Properties.Settings.Default.D_Amount;
+            //PAYEE
+            payeeCapital.Checked = Properties.Settings.Default.PayeeCapitalize;
+            payeeLower.Checked = Properties.Settings.Default.PayeeLower;
+            payeeCustomize.Checked = Properties.Settings.Default.PayeeCustomize;
+            //AMOUNT
+            amountCapital.Checked = Properties.Settings.Default.AmountCapital;
+            amountLower.Checked = Properties.Settings.Default.AmountLower;
+            amountCamille.Checked = Properties.Settings.Default.AmountCamille;
+
+            //Online and Offline Modes
+            OfflineMode.Checked = Properties.Settings.Default.ModeOffline;
+            OnlineMode.Checked = Properties.Settings.Default.ModeOnline;
+
+
+            isReady = true;
+
+            Report();
         }
 
         private DataTable GetTable()
@@ -67,6 +89,8 @@ namespace Cheque_Print_Writer
 
         private void Report()
         {
+            if (!isReady)
+                return;
             //new ReportDataSource()
             this.reportViewer1.LocalReport.DataSources.Clear();
             var reportDataSource1 = new ReportDataSource("DataSet1", GetTable());
@@ -77,7 +101,8 @@ namespace Cheque_Print_Writer
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-
+            if (!isReady)
+                return;
             //Adding some comma separator
             //String.Format("{0:n}", 1234); //Output: 1,234.00
             //string.Format("{0:n0}", 9876); // no digits after the decimal point. Output: 9,876
@@ -118,6 +143,14 @@ namespace Cheque_Print_Writer
             }catch
             {
                 //textBox5.Text = "Invalid";
+            }
+            if(amountCapital.Checked)
+            {
+                textBox5.Text = textBox5.Text.ToUpper();
+            }
+            else if(amountLower.Checked)
+            {
+                textBox5.Text = textBox5.Text.ToLower();
             }
             Report();
         }
@@ -161,6 +194,83 @@ namespace Cheque_Print_Writer
                 radioButton1.Checked = false;
                 radioButton2.Checked = true;
             }
+        }
+
+        private void payeeCharactersClick(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.PayeeCapitalize = payeeCapital.Checked = false;
+            Properties.Settings.Default.PayeeLower = payeeLower.Checked = false;
+            Properties.Settings.Default.PayeeCustomize = payeeCustomize.Checked = false;
+
+            (sender as ToolStripMenuItem).Checked = true;
+
+            if(sender == payeeCapital)
+            {
+
+                Properties.Settings.Default.PayeeCapitalize = payeeCapital.Checked;
+            }
+            else if(sender == payeeLower)
+            {
+                Properties.Settings.Default.PayeeLower = payeeLower.Checked;
+            }
+            else if(sender == payeeCustomize)
+            {
+                Properties.Settings.Default.PayeeCustomize = payeeCustomize.Checked;
+            }
+       
+        }
+
+        private void amountCharacterClick(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.AmountCapital = amountCapital.Checked = false;
+            Properties.Settings.Default.AmountLower = amountLower.Checked = false;
+            Properties.Settings.Default.AmountCamille = amountCamille.Checked = false;
+
+            (sender as ToolStripMenuItem).Checked = true;
+
+            if(sender == amountCapital)
+            {
+                Properties.Settings.Default.AmountCapital = amountCapital.Checked;
+            }
+            else if(sender == amountLower)
+            {
+                Properties.Settings.Default.AmountLower = amountLower.Checked;
+            }
+            else if(sender == amountCamille)
+            {
+                Properties.Settings.Default.AmountCamille = amountCamille.Checked;
+            }
+        }
+
+        private void modeLineClick(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.ModeOnline = OnlineMode.Checked = false;
+            Properties.Settings.Default.ModeOffline = OfflineMode.Checked = false;
+
+            (sender as ToolStripMenuItem).Checked = true;
+
+            if (sender == OnlineMode)
+            {
+                Properties.Settings.Default.ModeOnline = OnlineMode.Checked;
+            }
+            else if (sender == OfflineMode)
+            {
+                Properties.Settings.Default.ModeOffline = OfflineMode.Checked;
+            }
+        }
+
+        private void serverSetupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult res = new DBSetup().ShowDialog();
+            if(res == DialogResult.OK)
+            {
+                modeLineClick(OnlineMode, null);
+            }
+        }
+
+        private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new UsersList().ShowDialog();
         }
     }
 }
