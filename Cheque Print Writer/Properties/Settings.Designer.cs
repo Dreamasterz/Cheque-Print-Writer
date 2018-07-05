@@ -418,5 +418,17 @@ namespace Cheque_Print_Writer.Properties {
                 this["sslmode"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool KeepSignIn {
+            get {
+                return ((bool)(this["KeepSignIn"]));
+            }
+            set {
+                this["KeepSignIn"] = value;
+            }
+        }
     }
 }

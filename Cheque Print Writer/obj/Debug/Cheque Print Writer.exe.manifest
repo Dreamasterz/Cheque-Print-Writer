@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cheque Print Writer.exe" size="65960">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cheque Print Writer.exe" size="71080">
       <assemblyIdentity name="Cheque Print Writer" version="1.0.0.0" publicKeyToken="61841747D25079A2" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>FUmRIJ3IeuPYM+VpbQZOUlQMSyDquhw8mtnfd4Jg0o0=</dsig:DigestValue>
+        <dsig:DigestValue>hEmsIittJZ3XUfYdq0vhwylmG3Z1RkvWQPNOvw2TAUs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -713,13 +713,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Cheque Print Writer.exe.config" size="4219">
+  <file name="Cheque Print Writer.exe.config" size="4322">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>1qJlz8YskuHwP5Mm95SrYU7vebul/jQZWnEVnUAwuD8=</dsig:DigestValue>
+      <dsig:DigestValue>0MgPLSkIJ57F4ch8k6Af0XPUmrMtzjmhtojRjVlDJxA=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

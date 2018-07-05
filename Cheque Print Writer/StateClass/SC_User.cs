@@ -7,9 +7,9 @@ using MySql.Data.MySqlClient;
 
 namespace StateClass
 {
-    class User : CommonState
+    class SC_User : CommonState
     {
-        public User()
+        public SC_User()
             : base()
         {
             ProcedureName = "appuser";

@@ -140,3 +140,4 @@ C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print 
 C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\obj\Debug\Cheque Print Writer.exe
 C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\obj\Debug\Cheque Print Writer.pdb
 C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\obj\Debug\Cheque_Print_Writer.UsersList.resources
+C:\Users\User\source\repos\Cheque Print Writer\Cheque-Print-Writer\Cheque Print Writer\obj\Debug\Cheque_Print_Writer.Login.resources

@@ -141,6 +141,32 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Line Name="Line1">
+        <Top>2.78267cm</Top>
+        <Left>0.87877cm</Left>
+        <Height>-2.06375cm</Height>
+        <Width>1.74625cm</Width>
+        <ZIndex>4</ZIndex>
+        <Visibility>
+          <Hidden>true</Hidden>
+        </Visibility>
+        <CustomProperties>
+          <CustomProperty>
+            <Name>position</Name>
+            <Value>absolute</Value>
+          </CustomProperty>
+          <CustomProperty>
+            <Name>zindex</Name>
+            <Value>10</Value>
+          </CustomProperty>
+        </CustomProperties>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+            <Width>2pt</Width>
+          </Border>
+        </Style>
+      </Line>
     </ReportItems>
     <Height>3in</Height>
     <Style />

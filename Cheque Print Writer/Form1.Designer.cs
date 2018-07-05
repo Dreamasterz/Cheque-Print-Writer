@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.DataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSet1 = new Cheque_Print_Writer.DataSet1();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,7 +58,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.onlinelabel = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -67,12 +69,20 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.DataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DataSet1 = new Cheque_Print_Writer.DataSet1();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // DataTable1BindingSource
+            // 
+            this.DataTable1BindingSource.DataMember = "DataTable1";
+            this.DataTable1BindingSource.DataSource = this.DataSet1;
+            // 
+            // DataSet1
+            // 
+            this.DataSet1.DataSetName = "DataSet1";
+            this.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -236,7 +246,7 @@
             this.serverSetupToolStripMenuItem,
             this.manageUsersToolStripMenuItem});
             this.OnlineMode.Name = "OnlineMode";
-            this.OnlineMode.Size = new System.Drawing.Size(180, 22);
+            this.OnlineMode.Size = new System.Drawing.Size(144, 22);
             this.OnlineMode.Text = "Online Mode";
             this.OnlineMode.Click += new System.EventHandler(this.modeLineClick);
             // 
@@ -258,7 +268,7 @@
             // 
             this.OfflineMode.CheckOnClick = true;
             this.OfflineMode.Name = "OfflineMode";
-            this.OfflineMode.Size = new System.Drawing.Size(180, 22);
+            this.OfflineMode.Size = new System.Drawing.Size(144, 22);
             this.OfflineMode.Text = "Offline Mode";
             this.OfflineMode.Click += new System.EventHandler(this.modeLineClick);
             // 
@@ -311,15 +321,15 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label1
+            // onlinelabel
             // 
-            this.label1.BackColor = System.Drawing.Color.Chartreuse;
-            this.label1.Location = new System.Drawing.Point(12, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1041, 15);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Online Mode/Offline Mode(Red)";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.onlinelabel.BackColor = System.Drawing.Color.Chartreuse;
+            this.onlinelabel.Location = new System.Drawing.Point(12, 24);
+            this.onlinelabel.Name = "onlinelabel";
+            this.onlinelabel.Size = new System.Drawing.Size(1041, 15);
+            this.onlinelabel.TabIndex = 26;
+            this.onlinelabel.Text = "Online Mode/Offline Mode(Red)";
+            this.onlinelabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // comboBox2
             // 
@@ -446,22 +456,12 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // DataTable1BindingSource
-            // 
-            this.DataTable1BindingSource.DataMember = "DataTable1";
-            this.DataTable1BindingSource.DataSource = this.DataSet1;
-            // 
-            // DataSet1
-            // 
-            this.DataSet1.DataSetName = "DataSet1";
-            this.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1065, 447);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.onlinelabel);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.button1);
@@ -486,10 +486,10 @@
             this.Text = "Cheque Printer";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -532,7 +532,7 @@
         private System.Windows.Forms.ToolStripMenuItem OnlineMode;
         private System.Windows.Forms.ToolStripMenuItem serverSetupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem OfflineMode;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label onlinelabel;
         private System.Windows.Forms.ToolStripMenuItem signInToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageUsersToolStripMenuItem;
     }

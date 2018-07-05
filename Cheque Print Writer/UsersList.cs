@@ -19,7 +19,7 @@ namespace Cheque_Print_Writer
 
         private void button2_Click(object sender, EventArgs e)
         {
-            StateClass.User user = new StateClass.User();
+            StateClass.SC_User user = new StateClass.SC_User();
             user.Username = username.Text;
             user.Fullname = fullname.Text;
             user.Email = email.Text;

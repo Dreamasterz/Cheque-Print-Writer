@@ -13,6 +13,34 @@ namespace Cheque_Print_Writer
 {
     public partial class Form1 : Form
     {
+        private bool _online = true;
+        private bool secured = true;
+        private bool Online
+        {
+            get { return _online; }
+            set
+            {
+                if(value == true)
+                {
+                    if (secured)
+                    {
+                        onlinelabel.Text = "Online Mode";
+                        onlinelabel.BackColor = Color.Chartreuse;
+                    }
+                    else
+                    {
+                        onlinelabel.BackColor = Color.Magenta;
+                    }
+                }
+                else
+                {
+                    onlinelabel.Text = "Offline Mode";
+                    onlinelabel.BackColor = Color.Red;
+                }
+
+                _online = value;
+            }
+        }
         public Form1()
         {
             InitializeComponent();
@@ -41,10 +69,69 @@ namespace Cheque_Print_Writer
             OfflineMode.Checked = Properties.Settings.Default.ModeOffline;
             OnlineMode.Checked = Properties.Settings.Default.ModeOnline;
 
+            //Check if its online... if offline automatically set it to offline mode
+            if (OnlineMode.Checked)
+            {
+                CheckLineConnection();
+            }
+            else
+            {
+                Online = false;
+            }
+
+            ////
+            ///TODO: LOAD DATA if the Connection is Online
+            if(Online)
+            {
+
+            }
 
             isReady = true;
 
             Report();
+        }
+
+        private void CheckLineConnection()
+        {
+            Online = new StateClass.ConnectionStr().ConnectionSuccess;
+
+            if (Online)
+            {
+
+                if (OnlineMode.Checked)
+                {
+                    StateClass.SC_UserLogin login = new StateClass.SC_UserLogin();
+                    login.UserName = Properties.Settings.Default.AppUser;
+                    login.Password = Properties.Settings.Default.AppUserToken;
+
+                    //If it is allowed to sign in automatically
+
+                    login.IsToken = Properties.Settings.Default.KeepSignIn ? "1" : "2";
+
+                    StateClass.LoginResult loginres = login.Login();
+                    //Check first if it is secured. we need to login
+                    if(loginres.Login)
+                    {
+                        Properties.Settings.Default.AppUserToken = loginres.Token;
+                        return;
+                    }
+
+                    if (loginres.isSecured)
+                    {
+                        DialogResult res = new Login().ShowDialog();
+                        if (res != DialogResult.OK)
+                        {
+                            this.Close();
+                            return;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                OfflineMode.Checked = true;
+                OnlineMode.Checked = false;
+            }
         }
 
         private DataTable GetTable()
@@ -252,10 +339,12 @@ namespace Cheque_Print_Writer
             if (sender == OnlineMode)
             {
                 Properties.Settings.Default.ModeOnline = OnlineMode.Checked;
+                CheckLineConnection();
             }
             else if (sender == OfflineMode)
             {
                 Properties.Settings.Default.ModeOffline = OfflineMode.Checked;
+                Online = false;
             }
         }
 
