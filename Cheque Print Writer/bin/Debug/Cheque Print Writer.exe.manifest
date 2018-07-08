@@ -3,7 +3,7 @@
   <asmv1:assemblyIdentity name="Cheque Print Writer.exe" version="1.0.0.14" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Cheque Print Writer" version="1.0.0.0" publicKeyToken="61841747D25079A2" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="Cheque Print Writer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
     <commandLine file="Cheque Print Writer.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cheque Print Writer.exe" size="71080">
-      <assemblyIdentity name="Cheque Print Writer" version="1.0.0.0" publicKeyToken="61841747D25079A2" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cheque Print Writer.exe" size="71120">
+      <assemblyIdentity name="Cheque Print Writer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>hEmsIittJZ3XUfYdq0vhwylmG3Z1RkvWQPNOvw2TAUs=</dsig:DigestValue>
+        <dsig:DigestValue>kJxypePeoEIT6C0nf1en+9wSq9oP3yRdFSvGivMbC9Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
