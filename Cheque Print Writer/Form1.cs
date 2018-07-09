@@ -55,7 +55,7 @@ namespace Cheque_Print_Writer
             //Property Loaded
             Properties.Settings.Default.Reload();
 
-            textBox3.Text = Properties.Settings.Default.D_Amount;
+            amount.Text = Properties.Settings.Default.D_Amount;
             //PAYEE
             payeeCapital.Checked = Properties.Settings.Default.PayeeCapitalize;
             payeeLower.Checked = Properties.Settings.Default.PayeeLower;
@@ -83,14 +83,23 @@ namespace Cheque_Print_Writer
             ///TODO: LOAD DATA if the Connection is Online
             if(Online)
             {
-                StateClass.SC_PayeeData payee = new StateClass.SC_PayeeData();
-                comboBox2.Items.Add(payee.DATA);
-                comboBox2.DisplayMember = "name";
+                RefreshList();
             }
 
             isReady = true;
-
+            
             Report();
+        }
+
+        public void RefreshList()
+        {
+            name.Items.Clear();
+            name.DisplayMember = "name";
+            StateClass.SC_PayeeData payee = new StateClass.SC_PayeeData();
+            foreach(StateClass.SC_PayeeData p in payee.DATA)
+            {
+                name.Items.Add(p);
+            }
         }
 
         private void CheckLineConnection()
@@ -146,7 +155,7 @@ namespace Cheque_Print_Writer
             table.Columns.Add("wordamount", typeof(string));
 
             // Here we add five DataRows.
-            string date =  checkBox1.Checked ?  "**"+dateTimePicker1.Value.ToString(textBox2.Text)+"**": "";
+            string date =  checkBox1.Checked ?  "**"+dateTime.Value.ToString(dateformat.Text)+"**": "";
             if(checkBox4.Checked)
             {
                 date = date.ToUpper();
@@ -154,23 +163,23 @@ namespace Cheque_Print_Writer
 
             decimal dec;
             string amount = "";
-            if(decimal.TryParse(textBox3.Text, out dec))
+            if(decimal.TryParse(this.amount.Text, out dec))
             {
-                 amount = "**"+String.Format("{0:n}", dec)+"**";
+                 amount = "**"+ string.Format("{0:n}", dec)+"**";
             }
             if(checkBox3.Checked == false)
             {
                 amount = "";
             }
              
-            string fullname = comboBox2.Text.Trim()=="" ? "" :"**"+ comboBox2.Text+"**";
+            string fullname = name.Text.Trim()=="" ? "" :"**"+ name.Text+"**";
             if(checkBox2.Checked == false)
             {
                 fullname = "";
             }
 
 
-            string wordamount = textBox5.Text.Trim() == "" ? "" : "**" + textBox5.Text +"**";
+            string wordamount = word.Text.Trim() == "" ? "" : "**" + word.Text +"**";
 
             table.Rows.Add(date, amount, fullname, wordamount);
             return table;
@@ -218,11 +227,11 @@ namespace Cheque_Print_Writer
                     }
                     if (x > 0)
                     {
-                        textBox5.Text = NumberinWords.NumberToWords(x) + ss + " Only";
+                        word.Text = NumberinWords.NumberToWords(x) + ss + " Only";
                     }
                     else
                     {
-                        textBox5.Text = ss + " Only";
+                        word.Text = ss + " Only";
                     }
                 }
                 else
@@ -235,11 +244,11 @@ namespace Cheque_Print_Writer
             }
             if(amountCapital.Checked)
             {
-                textBox5.Text = textBox5.Text.ToUpper();
+                word.Text = word.Text.ToUpper();
             }
             else if(amountLower.Checked)
             {
-                textBox5.Text = textBox5.Text.ToLower();
+                word.Text = word.Text.ToLower();
             }
             Report();
         }
@@ -263,13 +272,27 @@ namespace Cheque_Print_Writer
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Properties.Settings.Default.D_Amount = textBox3.Text;
+            Properties.Settings.Default.D_Amount = amount.Text;
             Properties.Settings.Default.Save();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Report();
+            StateClass.SC_PayeeData payee = new StateClass.SC_PayeeData();
+            payee.name = name.Text.Trim();
+            payee.amount = amount.Text.Trim();
+            payee.word = word.Text.Trim();
+            payee.dateFormat = dateformat.Text.Trim();
+            payee.dateTime = dateTime.Value.ToShortDateString();
+            payee.bank = bank.Text.Trim();
+            if(payee.Insert().Success)
+            {
+                MessageBox.Show("Saved");
+            }
+
+
+            RefreshList();
+            //Report();
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -362,6 +385,33 @@ namespace Cheque_Print_Writer
         private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new UsersList().ShowDialog();
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            StateClass.SC_PayeeData payee = name.SelectedItem as StateClass.SC_PayeeData;
+            if(payee != null)
+            {
+                isReady = false;
+                bank.Text = payee.bank;
+                name.Text = payee.name;
+                dateformat.Text = payee.dateFormat;
+                amount.Text = payee.amount;
+
+                isReady = true;
+                word.Text = payee.word;
+            }
+        }
+
+        private int timval = 0;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(timval == 20)
+            {
+                timval = 0;
+                webBrowser1.Refresh();
+            }
+            timval++;
         }
     }
 }

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.DataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSet1 = new Cheque_Print_Writer.DataSet1();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.bank = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -56,20 +56,21 @@
             this.signInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.amount = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.onlinelabel = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.name = new System.Windows.Forms.ComboBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.word = new System.Windows.Forms.TextBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateformat = new System.Windows.Forms.TextBox();
+            this.dateTime = new System.Windows.Forms.DateTimePicker();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -87,9 +88,9 @@
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.DataTable1BindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource3.Name = "DataSet1";
+            reportDataSource3.Value = this.DataTable1BindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Cheque_Print_Writer.cheque.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 48);
             this.reportViewer1.Name = "reportViewer1";
@@ -97,18 +98,18 @@
             this.reportViewer1.Size = new System.Drawing.Size(776, 316);
             this.reportViewer1.TabIndex = 2;
             // 
-            // comboBox1
+            // bank
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.bank.FormattingEnabled = true;
+            this.bank.Items.AddRange(new object[] {
             "MetroBank",
             "MetroBank(Personal)"});
-            this.comboBox1.Location = new System.Drawing.Point(92, 370);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(239, 21);
-            this.comboBox1.TabIndex = 3;
-            this.comboBox1.Text = "MetroBank";
-            this.comboBox1.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.bank.Location = new System.Drawing.Point(92, 370);
+            this.bank.Name = "bank";
+            this.bank.Size = new System.Drawing.Size(239, 21);
+            this.bank.TabIndex = 3;
+            this.bank.Text = "MetroBank";
+            this.bank.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label2
             // 
@@ -144,7 +145,7 @@
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // settingsToolStripMenuItem
@@ -302,13 +303,13 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox3
+            // amount
             // 
-            this.textBox3.Location = new System.Drawing.Point(444, 400);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(344, 20);
-            this.textBox3.TabIndex = 12;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.amount.Location = new System.Drawing.Point(444, 400);
+            this.amount.Name = "amount";
+            this.amount.Size = new System.Drawing.Size(344, 20);
+            this.amount.TabIndex = 12;
+            this.amount.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // button2
             // 
@@ -325,31 +326,35 @@
             this.onlinelabel.BackColor = System.Drawing.Color.Chartreuse;
             this.onlinelabel.Location = new System.Drawing.Point(12, 24);
             this.onlinelabel.Name = "onlinelabel";
-            this.onlinelabel.Size = new System.Drawing.Size(1041, 15);
+            this.onlinelabel.Size = new System.Drawing.Size(776, 21);
             this.onlinelabel.TabIndex = 26;
             this.onlinelabel.Text = "Online Mode/Offline Mode(Red)";
             this.onlinelabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // webBrowser1
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(794, 42);
+            this.webBrowser1.Location = new System.Drawing.Point(794, 27);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.ScriptErrorsSuppressed = true;
             this.webBrowser1.ScrollBarsEnabled = false;
-            this.webBrowser1.Size = new System.Drawing.Size(227, 469);
+            this.webBrowser1.Size = new System.Drawing.Size(227, 618);
             this.webBrowser1.TabIndex = 27;
             this.webBrowser1.Url = new System.Uri("https://jpacific.com/myapps?mobile=yes", System.UriKind.Absolute);
             // 
-            // comboBox2
+            // name
             // 
-            this.comboBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Cheque_Print_Writer.Properties.Settings.Default, "D_Payee", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(92, 403);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(239, 21);
-            this.comboBox2.TabIndex = 24;
-            this.comboBox2.Text = global::Cheque_Print_Writer.Properties.Settings.Default.D_Payee;
-            this.comboBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.name.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.name.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.name.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Cheque_Print_Writer.Properties.Settings.Default, "D_Payee", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.name.FormattingEnabled = true;
+            this.name.Location = new System.Drawing.Point(92, 403);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(239, 21);
+            this.name.TabIndex = 24;
+            this.name.Text = global::Cheque_Print_Writer.Properties.Settings.Default.D_Payee;
+            this.name.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.name.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // checkBox4
             // 
@@ -365,15 +370,15 @@
             this.checkBox4.UseVisualStyleBackColor = true;
             this.checkBox4.CheckedChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // textBox5
+            // word
             // 
-            this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Cheque_Print_Writer.Properties.Settings.Default, "D_WordAmount", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.textBox5.Location = new System.Drawing.Point(165, 450);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(623, 20);
-            this.textBox5.TabIndex = 21;
-            this.textBox5.Text = global::Cheque_Print_Writer.Properties.Settings.Default.D_WordAmount;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.word.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Cheque_Print_Writer.Properties.Settings.Default, "D_WordAmount", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.word.Location = new System.Drawing.Point(165, 450);
+            this.word.Name = "word";
+            this.word.Size = new System.Drawing.Size(623, 20);
+            this.word.TabIndex = 21;
+            this.word.Text = global::Cheque_Print_Writer.Properties.Settings.Default.D_WordAmount;
+            this.word.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // radioButton2
             // 
@@ -429,28 +434,28 @@
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // textBox2
+            // dateformat
             // 
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Cheque_Print_Writer.Properties.Settings.Default, "D_DateFormat", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.textBox2.Location = new System.Drawing.Point(585, 372);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(103, 20);
-            this.textBox2.TabIndex = 9;
-            this.textBox2.Text = global::Cheque_Print_Writer.Properties.Settings.Default.D_DateFormat;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.dateformat.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Cheque_Print_Writer.Properties.Settings.Default, "D_DateFormat", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.dateformat.Location = new System.Drawing.Point(585, 372);
+            this.dateformat.Name = "dateformat";
+            this.dateformat.Size = new System.Drawing.Size(103, 20);
+            this.dateformat.TabIndex = 9;
+            this.dateformat.Text = global::Cheque_Print_Writer.Properties.Settings.Default.D_DateFormat;
+            this.dateformat.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // dateTimePicker1
+            // dateTime
             // 
-            this.dateTimePicker1.Checked = false;
-            this.dateTimePicker1.CustomFormat = "MMM dd, yyyy";
-            this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Cheque_Print_Writer.Properties.Settings.Default, "D_Date", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(386, 370);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(110, 20);
-            this.dateTimePicker1.TabIndex = 7;
-            this.dateTimePicker1.Value = global::Cheque_Print_Writer.Properties.Settings.Default.D_Date;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dateTime.Checked = false;
+            this.dateTime.CustomFormat = "MMM dd, yyyy";
+            this.dateTime.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Cheque_Print_Writer.Properties.Settings.Default, "D_Date", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.dateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTime.Location = new System.Drawing.Point(386, 370);
+            this.dateTime.Name = "dateTime";
+            this.dateTime.Size = new System.Drawing.Size(110, 20);
+            this.dateTime.TabIndex = 7;
+            this.dateTime.Value = global::Cheque_Print_Writer.Properties.Settings.Default.D_Date;
+            this.dateTime.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // checkBox1
             // 
@@ -465,30 +470,36 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1033, 523);
+            this.ClientSize = new System.Drawing.Size(1033, 649);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.onlinelabel);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.name);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.checkBox4);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.word);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.amount);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.dateformat);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateTime);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.bank);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -507,26 +518,26 @@
 
         #endregion
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox bank;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTime;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox dateformat;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox amount;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox word;
         private System.Windows.Forms.BindingSource DataTable1BindingSource;
         private DataSet1 DataSet1;
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox name;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem payeeCharactersToolStripMenuItem;
@@ -546,6 +557,7 @@
         private System.Windows.Forms.ToolStripMenuItem signInToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageUsersToolStripMenuItem;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
