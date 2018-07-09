@@ -406,7 +406,7 @@ namespace Cheque_Print_Writer
         private int timval = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(timval == 20)
+            if(timval == 500)
             {
                 timval = 0;
                 webBrowser1.Refresh();
