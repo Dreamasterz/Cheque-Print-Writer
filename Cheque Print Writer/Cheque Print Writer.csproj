@@ -154,6 +154,7 @@
     <Compile Include="StateClass\CodeScript.cs" />
     <Compile Include="StateClass\CommonState.cs" />
     <Compile Include="StateClass\ConnectionStr.cs" />
+    <Compile Include="StateClass\SC_PayeeData.cs" />
     <Compile Include="StateClass\SC_Userlists.cs" />
     <Compile Include="StateClass\SC_User.cs" />
     <Compile Include="StateClass\SC_UserLogin.cs" />

@@ -83,7 +83,9 @@ namespace Cheque_Print_Writer
             ///TODO: LOAD DATA if the Connection is Online
             if(Online)
             {
-
+                StateClass.SC_PayeeData payee = new StateClass.SC_PayeeData();
+                comboBox2.Items.Add(payee.DATA);
+                comboBox2.DisplayMember = "name";
             }
 
             isReady = true;
