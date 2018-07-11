@@ -404,12 +404,17 @@ namespace Cheque_Print_Writer
         }
 
         private int timval = 0;
+        private int randval = 400;
+
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(timval == 500)
+            if(timval == randval)
             {
+                randval = 100 + new Random().Next(400);
                 timval = 0;
-                webBrowser1.Refresh();
+                //webBrowser1.Url = new Uri();
+                webBrowser1.Navigate("https://jpacific.com/myapps?mobile=yes");
+                //webBrowser1.Refresh();
             }
             timval++;
         }
