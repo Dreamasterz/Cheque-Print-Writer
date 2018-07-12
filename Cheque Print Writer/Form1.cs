@@ -31,6 +31,7 @@ namespace Cheque_Print_Writer
                     {
                         onlinelabel.BackColor = Color.Magenta;
                     }
+                   
                 }
                 else
                 {
@@ -38,6 +39,7 @@ namespace Cheque_Print_Writer
                     onlinelabel.BackColor = Color.Red;
                 }
 
+                button2.Enabled = value;
                 _online = value;
             }
         }
@@ -69,6 +71,8 @@ namespace Cheque_Print_Writer
             OfflineMode.Checked = Properties.Settings.Default.ModeOffline;
             OnlineMode.Checked = Properties.Settings.Default.ModeOnline;
 
+            dateTime.Value = DateTime.Now;
+
             //Check if its online... if offline automatically set it to offline mode
             if (OnlineMode.Checked)
             {
@@ -85,6 +89,7 @@ namespace Cheque_Print_Writer
             {
                 RefreshList();
             }
+
 
             isReady = true;
             
@@ -265,9 +270,9 @@ namespace Cheque_Print_Writer
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //comboBox2.Text = "";
-            //textBox3.Clear();
-            //textBox5.Clear();
+            name.Text = "";
+            amount.Text = "";
+            word.Text = "";
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
