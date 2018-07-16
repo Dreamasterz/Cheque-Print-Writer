@@ -94,8 +94,17 @@ namespace Cheque_Print_Writer
             isReady = true;
             
             Report();
+            this.webBrowser1.DocumentCompleted += webBrowser1_DocumentCompleted;
         }
 
+        bool completed = false;
+        void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            if (e.Url == webBrowser1.Document.Url)
+            {
+                completed = true;
+            }
+        }
         public void RefreshList()
         {
             name.Items.Clear();
@@ -273,6 +282,30 @@ namespace Cheque_Print_Writer
             name.Text = "";
             amount.Text = "";
             word.Text = "";
+
+            if (completed)
+            {
+                //webBrowser1.Document.Window.Frames["google_ads_frame1"];
+                MessageBox.Show("The browser has loaded completely");
+                /*
+                //<input type="submit" value="Submit" />
+                HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("iframe");
+                //HtmlWindow = webBrowser1.Document.Window.Frames["iframeid"];
+                //HtmlWindow html = webBrowser1.Document.Window.Frames["google_ads_frame1"];
+                foreach (HtmlElement el in elc)
+                {
+                    MessageBox.Show("OMG");
+                    //if (el.GetAttribute("type").Equals("submit"))
+                    //{
+                        //el.InvokeMember("Click");
+                    //}
+                }
+
+                //var frame = webBrowser1.Document.Window.Frames["iframeid"];
+                //var button = frame.Document.GetElementById("buttonid");
+                //button.InvokeMember("click");
+                */
+            }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
