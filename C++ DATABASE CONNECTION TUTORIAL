@@ -1,0 +1,15 @@
+
+MYSQL INSTALLATION
+LAMP SERVER
+https://howtoubuntu.org/how-to-install-lamp-on-ubuntu
+
+MYSQL LIBRARY
+sudo apt-get install libmysql++-dev
+
+HELPFUL TUTORIAL
+https://www.codingfriends.com/index.php/2010/02/17/mysql-connection-example/comment-page-1/
+
+
+https://coderwall.com/p/w5kwzw/solved-can-t-connect-to-local-mysql-server-through-socket-tmp-mysql-sock
+Creating socket:
+$ ln -s /var/run/mysqld/mysqld.sock  /tmp/mysql.sock
