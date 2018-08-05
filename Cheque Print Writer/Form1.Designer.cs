@@ -145,7 +145,7 @@
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // settingsToolStripMenuItem
@@ -342,7 +342,7 @@
             this.webBrowser1.ScrollBarsEnabled = false;
             this.webBrowser1.Size = new System.Drawing.Size(227, 610);
             this.webBrowser1.TabIndex = 27;
-            this.webBrowser1.Url = new System.Uri("https://jpacific.com/myapps?mobile=yes", System.UriKind.Absolute);
+            this.webBrowser1.Url = new System.Uri("http://www.thelogicgates.com/myapps?mobile=yes", System.UriKind.Absolute);
             // 
             // name
             // 

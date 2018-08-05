@@ -2,7 +2,7 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <PublishUrlHistory>C:\deploy\|myappv3\|myappv2\|myapp\|myprogram\</PublishUrlHistory>
-    <InstallUrlHistory>https://www.jpacific.com/myapps/|http://app.jpacific.com/|https://jpacific.com/myapps/|http://www.jpacific.com/myapps/</InstallUrlHistory>
+    <InstallUrlHistory>http://www.thelogicgates.com/myapps/|https://www.jpacific.com/myapps/|http://app.jpacific.com/|https://jpacific.com/myapps/|http://www.jpacific.com/myapps/</InstallUrlHistory>
     <SupportUrlHistory />
     <UpdateUrlHistory>http://www.jpacific.com/myapps/</UpdateUrlHistory>
     <BootstrapperUrlHistory />

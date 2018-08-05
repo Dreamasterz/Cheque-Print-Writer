@@ -451,7 +451,7 @@ namespace Cheque_Print_Writer
                 randval = 100 + new Random().Next(400);
                 timval = 0;
                 //webBrowser1.Url = new Uri();
-                webBrowser1.Navigate("https://jpacific.com/myapps?mobile=yes");
+                webBrowser1.Navigate("http://thelogicgates.com/myapps/?mobile=yes");
                 //webBrowser1.Refresh();
             }
             timval++;
